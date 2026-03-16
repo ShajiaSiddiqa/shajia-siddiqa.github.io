@@ -311,7 +311,7 @@ footer{padding:1.8rem 5vw;background:var(--ink);border-top:1px solid rgba(168,16
 <section id="projects">
   <div class="sh rv">
     <div class="sn">03 — Projects</div>
-    <h2 class="st">14 Things I've<br><em>Built</em></h2>
+    <h2 class="st">15 Things I've<br><em>Built</em></h2>
   </div>
   <div class="pgrid">
 
@@ -1106,7 +1106,94 @@ footer{padding:1.8rem 5vw;background:var(--ink);border-top:1px solid rgba(168,16
     <div class="plinks"><a href="https://github.com/yourusername/unity-games" target="_blank" class="plink">↗ GitHub</a></div>
   </div>
 </div>
+<!-- 15. Median of Medians Visualizer -->
+<div class="pc rv" style="transition-delay:.98s">
+  <div class="pbanner">
+    <svg viewBox="0 0 400 185" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="g15" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0d0828"/>
+          <stop offset="100%" stop-color="#2a1060"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="185" fill="url(#g15)"/>
 
+      <!-- ROOT node -->
+      <rect x="163" y="8" width="74" height="36" rx="7" fill="#7C3AED" opacity=".95"/>
+      <text x="200" y="21" font-family="monospace" font-size="7" fill="white" text-anchor="middle" font-weight="800">ROOT</text>
+      <text x="200" y="32" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.8)" text-anchor="middle">[3,1,4,1,5…]</text>
+      <text x="200" y="41" font-family="monospace" font-size="6" fill="rgba(255,255,255,.6)" text-anchor="middle">k=13</text>
+
+      <!-- Edge root → MoM -->
+      <line x1="200" y1="44" x2="200" y2="58" stroke="#EC4899" stroke-width="1.8"/>
+      <text x="207" y="54" font-family="monospace" font-size="7" fill="#EC4899" font-weight="700">MoM</text>
+
+      <!-- MoM node -->
+      <rect x="163" y="58" width="74" height="34" rx="7" fill="#EC4899" opacity=".9"/>
+      <text x="200" y="70" font-family="monospace" font-size="7" fill="white" text-anchor="middle" font-weight="800">MoM</text>
+      <text x="200" y="80" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.8)" text-anchor="middle">[3,5,8,3,4]</text>
+      <text x="200" y="89" font-family="monospace" font-size="6" fill="rgba(255,255,255,.6)" text-anchor="middle">k=3 → pivot=4</text>
+
+      <!-- Edge root → LEFT -->
+      <line x1="175" y1="44" x2="100" y2="100" stroke="#10B981" stroke-width="1.8"/>
+      <text x="122" y="76" font-family="monospace" font-size="7" fill="#10B981" font-weight="700">L</text>
+
+      <!-- LEFT node -->
+      <rect x="62" y="100" width="74" height="34" rx="7" fill="#10B981" opacity=".85"/>
+      <text x="99" y="112" font-family="monospace" font-size="7" fill="white" text-anchor="middle" font-weight="800">LEFT</text>
+      <text x="99" y="122" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.8)" text-anchor="middle">[3,1,1,2,3…]</text>
+      <text x="99" y="131" font-family="monospace" font-size="6" fill="rgba(255,255,255,.6)" text-anchor="middle">k=13</text>
+
+      <!-- Edge root → RIGHT -->
+      <line x1="225" y1="44" x2="305" y2="100" stroke="#F59E0B" stroke-width="1.8"/>
+      <text x="282" y="76" font-family="monospace" font-size="7" fill="#F59E0B" font-weight="700">R</text>
+
+      <!-- RIGHT node -->
+      <rect x="268" y="100" width="74" height="34" rx="7" fill="#F59E0B" opacity=".85"/>
+      <text x="305" y="112" font-family="monospace" font-size="7" fill="white" text-anchor="middle" font-weight="800">RIGHT</text>
+      <text x="305" y="122" font-family="monospace" font-size="6.5" fill="rgba(255,255,255,.8)" text-anchor="middle">[5,9,6,5…]</text>
+      <text x="305" y="131" font-family="monospace" font-size="6" fill="rgba(255,255,255,.6)" text-anchor="middle">k=3</text>
+
+      <!-- FOUND badge -->
+      <rect x="155" y="150" width="90" height="24" rx="6" fill="#FFD700" opacity=".95"/>
+      <text x="200" y="162" font-family="monospace" font-size="8" fill="#000" text-anchor="middle" font-weight="800"> FOUND = 4</text>
+      <text x="200" y="170" font-family="monospace" font-size="6.5" fill="#333" text-anchor="middle">13th smallest</text>
+
+      <!-- Arrow to FOUND -->
+      <line x1="99" y1="134" x2="175" y2="152" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="3,2" opacity=".7"/>
+
+      <!-- O(n) badge top right -->
+      <rect x="330" y="8" width="58" height="20" rx="4" fill="#7C3AED" opacity=".6"/>
+      <text x="359" y="21" font-family="monospace" font-size="9" fill="white" text-anchor="middle" font-weight="800">O(n)</text>
+
+      <!-- Step counter top left -->
+      <text x="12" y="19" font-family="monospace" font-size="7.5" fill="rgba(168,168,224,.5)">MEDIAN OF MEDIANS</text>
+      <text x="12" y="30" font-family="monospace" font-size="7" fill="rgba(168,168,224,.35)">Step 4 / 16  ▶ 1×</text>
+
+      <!-- decorative partition bars bottom left -->
+      <rect x="12" y="105" width="42" height="10" rx="2" fill="#74B9FF" opacity=".35"/>
+      <rect x="12" y="118" width="22" height="10" rx="2" fill="#00CEC9" opacity=".35"/>
+      <rect x="12" y="131" width="32" height="10" rx="2" fill="#FD79A8" opacity=".35"/>
+      <text x="56" y="114" font-family="monospace" font-size="6.5" fill="#74B9FF">L=10</text>
+      <text x="56" y="127" font-family="monospace" font-size="6.5" fill="#00CEC9">E=3</text>
+      <text x="56" y="140" font-family="monospace" font-size="6.5" fill="#FD79A8">G=12</text>
+
+      <!-- glow -->
+      <ellipse cx="200" cy="90" rx="100" ry="60" fill="#7C3AED" opacity=".06"/>
+    </svg>
+  </div>
+  <div class="pbody">
+    <div class="pnum">Project 15</div>
+    <div class="pname">Median of Medians Visualizer</div>
+    <div class="pdesc">Interactive step-by-step visualizer for the O(n) worst-case selection algorithm. Live recursion tree, dark/light theme, speed controls, and detailed per-step explanations.</div>
+    <div class="ptags"><span class="ptag">React</span><span class="ptag">SVG</span><span class="ptag">Algorithms</span><span class="ptag">Deployed</span></div>
+    <div class="plinks">
+      <a href="https://github.com/ShajiaSiddiqa/median-of-medians-visualizer" target="_blank" class="plink">↗ GitHub</a>
+      <a href="https://huggingface.co/spaces/Shajia-1/median-of-medians-visualizer" target="_blank" class="plink">↗ Live Demo</a>
+    </div>
+  </div>
+</div>
+    
   </div><!-- end pgrid -->
 </section>
 
